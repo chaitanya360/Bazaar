@@ -1,0 +1,424 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static '/css/main2.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<!--#############################################INTERNAL CSS#############################################################-->
+<style>
+  body{
+    background-color:#E5E5E5;
+  }
+
+.cj_deck_container{
+    font-family: Dubai;
+    background-color: white;
+    border-left:3px solid #E5E5E5;
+    border-right:3px solid #E5E5E5;
+    border-radius:8px;
+}
+
+  .cjbox {
+          background-color:#343A40;
+          text-decoration:none;
+      }
+  a{
+    text-decoration:none;
+    color:wheat;
+  
+  }
+
+  a:hover{
+    color:white;
+  }
+@media only screen and (max-width:700px)
+{
+  .prod_3,.prod_4{
+    display:none;
+  }
+}
+
+
+</style>
+<!--#############################################***************#############################################################-->
+
+</head>
+
+
+<body style="padding:0;margin:0;" class="cjbody">
+
+<!--NAVIGATION BAR-->
+
+<nav class="navbar navbar-expand-md navbar-info sticky-top"  style="background-color:rgba(0,0,0,1);">
+  
+  <!--BRAND LOGO-->  
+  
+  <a class="navbar-brand ml-4" href="#">
+  <img src="{% static 'icon/logo02.png'%}" class="cjref img-fluid cjlogo" >
+  </a>
+  
+  <!--CART IMG-->
+  <div class="col-2 ml-n5"><img src="{% static 'icon/cart02.png' %} " class="img-cicle temp2"></div>
+
+  <!--NAVIGATION COLLAPSE BUTTON-->
+  <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="color:black">
+    <span><img src="{% static 'icon/more.png' %}" style="width:20px"></span>
+  </button>
+ 
+  <!--NAVIGATION ITEMS-->
+  <div class="collapse navbar-collapse " id="collapsibleNavbar" style="margin-left:28wv;">
+    <ul class="navbar-nav temp cjhead ml-0 col-12 ml-3" style="font-size:18px;">
+      <li class="ml-4 cjhead">
+      {%if user.is_authenticated%}
+       <a class="cjmenu mr-2" href="accounts/profile"><i class="far fa-user mx-2"></i>
+       {% filter upper %}
+       {{user.first_name}}
+       {% endfilter %}
+       
+       </a>
+      {%else%}
+        <a class="cjmenu mr-2" href="accounts/login"><i class="far fa-user mx-2"></i>Login</a>
+        {%endif%}
+      </li>
+      <li class="ml-4 cjhead">
+        <a class="cjmenu" href="#"><i class="fas fa-shopping-cart mx-2"></i>Cart</a>
+      </li>
+      <li class="ml-4 cjhead">
+        <a class="cjmenu" href="#"><i class="far fa-dot-circle mx-2"></i>About</a>
+      </li>
+       <li class="ml-4 cjhead mr-4">
+        <a class="cjmenu" href="#"><i class="far fa-dot-circle mx-2 "></i>FAQ</a>
+      </li>    
+    </ul>
+  </div>  
+  <!--SEARCH FIELD-->
+   <div class="col-3 temp "><input type="text" placeholder="SEARCH" class="cjhead pl-3 ml-n5" style="height:30px;font-size:16px;border:black 2px solid" ></input><button class="btn btn-light mx-1 mb-1 cjbtn" style="height:30px;padding-top:-1px;font-size:10px;border:black 2px solid ">Go For It </button></div>
+</nav>
+
+<!--MENU HORIZONTAL LIST-->
+
+<div class="container-fluid bg-dark text-center " style="overflow-x:hidde;z-index:9999">
+    <ul style="margin-bottom:0">
+        <li class="dropdown mx-3 cjdrop " style="display:inline">
+          <a class="dropdown-toggle ml-n5" data-toggle="dropdown" href="#" style="text-decoration:none;color:white">MEN <span class="caret"></span></a>
+          <ul class="dropdown-menu pl-4 pr-0 col-1 cjbox" >
+            <li><a href="#" >Topware</a></li>
+            <li><a href="#">Bottomware</a></li>
+            <li><a href="#">Seasonal</a></li>
+            <li><a href="#">Sportsware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+          </ul>
+        </li>
+
+         <li class="dropdown mx-3" style="display:inline">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="text-decoration:none;color:white">FASHION <span class="caret"></span></a>
+          <ul class="dropdown-menu pl-4 pr-0 col-1 cjbox" >
+            <li><a href="#" >Topware</a></li>
+            <li><a href="#">Bottomware</a></li>
+            <li><a href="#">Seasonal</a></li>
+            <li><a href="#">Sportsware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+          </ul>
+        </li>
+
+         <li class="dropdown mx-3 cjdrop" style="display:inline">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="text-decoration:none;color:white">BOOKS <span class="caret"></span></a>
+          <ul class="dropdown-menu pl-4 pr-0 cjbox" >
+            <li><a href="#" >Topware</a></li>
+            <li><a href="#">Bottomware</a></li>
+            <li><a href="#">Seasonal</a></li>
+            <li><a href="#">Sportsware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+            <li><a href="#">Innerware</a></li>
+            <li><a href="#">Sleepware</a></li>
+          </ul>
+        </li>
+       <li class="mx-3 mtemp" ><a href="#" style="text-decoration:none;color:white">TOYS<i class="fa fa-chevron-down ml-1 mt-1" aria-hidden="true"></i></a></li>
+       <li class="mx-3 mtemp" ><a href="#" style="text-decoration:none;color:white">FOOD<i class="fa fa-chevron-down ml-1 mt-1" aria-hidden="true"></i></a></li>
+       <li class="mx-3 mtemp" ><a href="#" style="text-decoration:none;color:white">JEWELLERY<i class="fa fa-chevron-down ml-1 mt-1" aria-hidden="true"></i></a></li>
+       <li class="mx-3 mtemp" ><a href="#" style="text-decoration:none;color:white">FOOTWARE<i class="fa fa-chevron-down ml-1 mt-1" aria-hidden="true"></i></a></li>
+       <li class="mx-3 mtemp" ><a href="#" style="text-decoration:none;color:white">COMPUTER HARDWARE<i class="fa fa-chevron-down ml-1 mt-1" aria-hidden="true"></i></a></li>
+       <li class="mx-3 mtemp" ><a href="#" style="text-decoration:none;color:white">ELECTRONICS AND MEDIA<i class="fa fa-chevron-down ml-1 mt-1" aria-hidden="true"></i></a></li>
+       <li class="mx-3 mtemp" ></li>
+    </ul>
+</div>
+
+
+<!--CAROUSEL-->
+
+<div id="demo" class="carousel slide " data-ride="carousel">
+
+  <!-- The slideshow -->
+  <div class="carousel-inner mt-0">
+   {%for carousel_item in carousel_set%}
+     {%if carousel_item.number%}
+    <div class="carousel-item active">
+      <img src={{carousel_item.image}} class="img-responsive" style="max-width:100%;height:auto" >
+    </div>
+     {%else%}
+    <div class="carousel-item">
+      <img src={{carousel_item.image}} class="img-responsive" style="max-width:100%;height:auto" alt="Los Angeles">
+    </div>
+     {%endif%}
+   {%endfor%} 
+  </div>
+
+  <!-- Left and right controls -->
+  {%for carousel_item in carousel_set %}
+    
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+ {%endfor%}
+</div>
+
+
+<h3>ELECTRONICS ERA 2020</h3>
+<!--CONTAINER FOR PRODUCTS MOBILES-->
+
+ <!--Title-->
+ <div class="container-fluid cj_deck_container pt-3 pb-3 mb-3 mt-3 sh" style="border-left:3px solid #E5E5E5;border-right:3px solid #E5E5E5;">
+   <h5 style="display:Inline" class="mr-5">TOP BRANDED MOBILES</h5>
+   <a href='#' class="ml-2 pt-1" style="float:right;position:absolute;right:20px;color:red">SHOP MORE</a>
+  <div class="row">
+   
+   <!--Product-->
+    <a class="col-lg-3 col-md-4 col-6 " style="border:1px solid black;">
+     <img  src="{% static 'images/products/mobiles/Realme_6_pro.webp' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">REALME 6 PRO</h5>
+     <div class="text-center">4gb-snapdragon. 6-core processor</div>
+    </a>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_2" style="border:1px solid black">
+     <img  src="{% static 'images/products/mobiles/Samsung-Galaxy-A50.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">SAMSUNG A50</h5>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_3" style="border:1px solid black">
+     <img  src="{% static 'images/products/mobiles/xiaomi_poco_f1.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">POCO F1</h5>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_4" style="border:1px solid black">
+     <img  src="{% static 'images/products/mobiles/onePlus8Plus.png' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">ONE+ 7</h5>
+    </div>
+
+  </div>
+ </div>
+
+<!--CONTAINER FOR PRODUCTS LAPTOPS-->
+ <div class="container-fluid cj_deck_container pt-3 pb-3 mb-3 mt-3 sh" style="border-left:3px solid #E5E5E5;border-right:3px solid #E5E5E5;">
+   <h5 style="display:Inline" class="mr-5">TOP LAPTOPS</h5>
+   <a href='#' class="ml-2 pt-1" style="float:right;position:absolute;right:20px;color:red">SHOP MORE</a>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-6" style="border:1px solid black">
+     <img  src="{% static 'images/products/laptops/Asus_rog.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">ASUS ROG</h5>
+    </div>
+   
+    <div class="col-lg-3 col-md-4 col-6 prod_2" style="border:1px solid black">
+     <img  src="{% static 'images/products/laptops/dell_inspiron_14_.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">DELL INSPIRON</h5>
+    </div>
+   
+    <div class="col-lg-3 col-md-4 col-6 prod_4 " style="border:1px solid black">
+     <img  src="{% static 'images/products/laptops/ASUS_M509.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">ASUS M509</h5>
+     <div class="text-center">4gb-snapdragon. 6-core processor</div>
+    </div>
+   
+    <div class="col-lg-3 col-md-4 col-6 prod_4" style="border:1px solid black">
+     <img  src="{% static 'images/products/laptops/Lenove_Yoga.webp' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">LENOVO YOGA</h5>
+    </div>
+  
+  </div>
+ </div>
+
+
+<!--DISCOUNT ADD 1-->
+ <center> <img src="{%static 'images/products/add/1500x400_Live_Now.gif'%}" class="img-responsive" style="max-width:100%;height:auto" > </center>
+
+
+
+<!--CONTAINER FOR PRODUCTS WATCHES-->
+
+ <!--Title-->
+ <div class="container-fluid cj_deck_container pt-3 pb-3 mb-3 mt-3 sh" style="border-left:3px solid #E5E5E5;border-right:3px solid #E5E5E5;">
+   <h5 style="display:Inline" class="mr-5">TOP SMART WATCHES</h5>
+   <a href='#' class="ml-2 pt-1" style="float:right;position:absolute;right:20px;color:red">SHOP MORE</a>
+  <div class="row">
+   
+   <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 " style="border:1px solid black">
+     <img  src="{% static 'images/products/smart_watches/samsung_gear.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">SAMSUNG GEAR</h5>
+     <div class="text-center">4gb-snapdragon. 6-core processor</div>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_2" style="border:1px solid black">
+     <img  src="{% static 'images/products/smart_watches/Samsung_gear_sports.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">SAMSUNG GEAR SPORTS</h5>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_3" style="border:1px solid black">
+     <img  src="{% static 'images/products/smart_watches/fast-track_smart_band.webp' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">FAST-TRACK BAND</h5>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_4" style="border:1px solid black">
+     <img  src="{% static 'images/products/smart_watches/samsung_galaxy_watch.webp' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">SAMSUNG GALAXY</h5>
+    </div>
+
+  </div>
+ </div>
+
+
+<!--CONTAINER FOR PRODUCTS HEADPHONES-->
+
+ <!--Title-->
+ <div class="container-fluid cj_deck_container pt-3 pb-3 mb-3 mt-3 sh" style="border-left:3px solid #E5E5E5;border-right:3px solid #E5E5E5;">
+   <h5 style="display:Inline" class="mr-5">HEADPHONES</h5>
+   <a href='#' class="ml-2 pt-1" style="float:right;position:absolute;right:20px;color:red">SHOP MORE</a>
+  <div class="row">
+   
+   <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 " style="border:1px solid black">
+     <img  src="{% static 'images/products/headphones/boat.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">BOAT</h5>
+     <div class="text-center">4gb-snapdragon. 6-core processor</div>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_2" style="border:1px solid black">
+     <img  src="{% static 'images/products/headphones/boAt-Rockerz-640-ss1.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">BOAT ROCKERZ</h5>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_3" style="border:1px solid black">
+     <img  src="{% static 'images/products/headphones/JBL_LIVE400BT.webp' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">JBL LIVE</h5>
+    </div>
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_4" style="border:1px solid black">
+     <img  src="{% static 'images/products/headphones/sony wh_ch700N.webp' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">SONY WH_CH</h5>
+    </div>
+
+  </div>
+ </div>
+
+<!--CONTAINER FOR PRODUCTS SPEAKERS-->
+
+ <!--Title-->
+ <div class="container-fluid cj_deck_container pt-3 pb-3 mb-3 mt-3 sh" style="border-left:3px solid #E5E5E5;border-right:3px solid #E5E5E5;">
+   <h5 style="display:Inline" class="mr-5">SPEAKERS</h5>
+   <a href='#' class="ml-2 pt-1" style="float:right;position:absolute;right:20px;color:red">SHOP MORE</a>
+  <div class="row">
+   
+   <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 " style="border:1px solid black">
+     <img  src="{% static 'images/products/speakers/jbl close.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">JBL</h5>
+     <div class="text-center"></div>
+    </div>
+  
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 " style="border:1px solid black">
+     <img  src="{% static 'images/products/speakers/wecool cannon.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">WECOOL CANNON</h5>
+    </div>
+   <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_3 " style="border:1px solid black">
+     <img  src="{% static 'images/products/speakers/jbl close.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">JBL</h5>
+     <div class="text-center"></div>
+    </div>
+  
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_3" style="border:1px solid black">
+     <img  src="{% static 'images/products/speakers/wecool cannon.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">WECOOL CANNON</h5>
+    </div>
+  
+  </div>
+ </div>
+
+<!--DISCOUNT ADD 2-->
+ <center> <img src="{%static 'images/products/add/laptop.webp'%}" class="img-responsive" style="max-width:100%;height:auto" > </center>
+
+
+<!--CONTAINER FOR PRODUCTS MONITORS-->
+
+ <!--Title-->
+ <div class="container-fluid cj_deck_container pt-3 pb-3 mb-3 mt-3 sh" style="border-left:3px solid #E5E5E5;border-right:3px solid #E5E5E5;">
+   <h5 style="display:Inline" class="mr-5">MONITORS</h5>
+   <a href='#' class="ml-2 pt-1" style="float:right;position:absolute;right:20px;color:red">SHOP MORE</a>
+  <div class="row">
+   
+   <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 " style="border:1px solid black">
+     <img  src="{% static 'images/products/monitors/Dell.jpeg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">DELL</h5>
+     <div class="text-center"></div>
+    </div>
+  
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_3" style="border:1px solid black">
+     <img  src="{% static 'images/products/monitors/Dell s2216H.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">DELL S2216H</h5>
+    </div>
+   <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 " style="border:1px solid black">
+     <img  src="{% static 'images/products/monitors/samsung.webp' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">SAMSUNG</h5>
+     <div class="text-center"></div>
+    </div>
+  
+    <!--Product-->
+    <div class="col-lg-3 col-md-4 col-6 prod_3" style="border:1px solid black">
+     <img  src="{% static 'images/products/monitors/Dell s2216H.jpg' %}" class="pt-2" style="width:100%;height:auto" >
+     <h5 class="text-center">DELL S SERIES</h5>
+    </div>
+
+  </div>
+ </div>
+
+
+
+
+
+
+
+
+
+<div class="cjbox">this is internal css</div>
+</body>
+
+
+<script src="https://kit.fontawesome.com/bc2536905a.js" crossorigin="anonymous"></script>

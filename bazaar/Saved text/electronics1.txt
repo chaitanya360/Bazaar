@@ -1,0 +1,22 @@
+
+{%for device in data%}
+{{device.title}}
+<img src="{{device.image}}">
+{{device.specs}}
+{%endfor%}
+
+
+
+----------------------------------------
+
+ <div class="container-fluid text-center bigs smalls" style="">
+     <div class="row">
+     <ul class="col-11" style="display:inline-block">
+      
+     </ul>
+     <button style="display:inline-block;color:black;height:26px;">click</button>
+     </div>
+  </div>
+
+
+

@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/register.css' %}">
+</head>
+<body>
+hello {{user.first_name}}
+
+<a href="logout">logout</a>
+{%block test%}
+
+ ok
+ 
+{%endblock%}
+</body>
+</html> 

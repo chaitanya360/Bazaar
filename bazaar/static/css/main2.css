@@ -1,0 +1,166 @@
+
+
+
+.cjlogo{
+    height:20px;
+    width:280px;
+    margin:-20px;
+    margin-top:-30px;
+}
+
+.cj_deck_container{
+    font-family: Dubai;
+    background-color: white;
+}
+
+.cjbody{
+    
+}
+
+.mtemp{
+    display: inline;
+}
+
+
+.sh{
+    box-shadow:1px 5px 8px #888888;
+    
+}
+   .smalls{
+      color:wheat;
+      background-color:#160606;
+     
+     padding-top:2px;
+     overflow-x:hidden;
+     overflow-y:hidden;
+    }
+  
+
+.cjhead{
+    color:red;
+    padding:4px;
+    margin-left: 5%;
+    border: 2px solid transparent;
+    border-radius: 15px;
+}
+
+/*-----------------half desktop screen----------------*/
+@media only screen and (max-width: 1400px)
+ {
+    .temp{
+       display: none;
+        }
+    .temp2{
+        
+        margin-left:10px;
+        width:150px;
+    }
+    .mtemp{
+        display: none;
+    }
+  
+  }
+
+
+/*------------------mobile screen----------------*/
+@media only screen and (max-width:700px)
+  {
+    .cjmenu{
+        margin:-20px;
+        margin-bottom:-40px;
+        display: inline-block;
+        width: 300px;
+        margin-left: 70px;
+        
+    }
+    .temp2{
+        
+        margin-left:-50px;
+        width:150px;
+    }
+    .mtemp{
+        display: none;
+    }
+    
+     
+
+  }
+
+/* MOBILE SMALL*/
+  @media only screen and (max-width:470px)
+  {
+    .cjmenu{
+        margin:-20px;
+        margin-bottom:-40px;
+        display: inline-block;
+        width: 300px;
+        margin-left: 70px;
+        
+    }
+    .temp2{
+        
+        margin-left:-60px;
+        width:150px;
+    }
+    .cjlogo{
+        height:20px;
+        width:200px;
+        margin:-30px;
+        margin-top:-30px;
+    }
+ 
+    .mtemp{
+        display: none;
+    }  
+    
+
+  }
+
+
+
+/*------------------desktop screen----------------*/
+  @media (min-width: 1400px)
+   {
+    .temp2{
+        width:250px;
+    }
+
+    .temp{
+     color:whitesmoke;
+     font-size:20px;
+     width:20px;
+        }
+
+        .cjhead{
+        
+            padding:4px;
+            margin-left: 15%;
+            border: 2px solid transparent;
+            border-radius: 15px;
+        }
+        
+  }
+
+
+
+
+
+
+
+
+
+  .cjmenu{
+      color: white;
+     
+  }
+
+  .cjref{
+    -webkit-box-reflect: below -10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, transparent) , to(rgba(250, 250, 250, 0.1)));
+  }
+
+
+  a{
+      text-decoration: none;
+  }
+
+
